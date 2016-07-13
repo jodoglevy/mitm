@@ -13,17 +13,17 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
-import enums_pb2 as enums__pb2
+import holoholo_shared_pb2 as holoholo__shared__pb2
 
-from enums_pb2 import *
+from holoholo_shared_pb2 import *
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='map.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\tmap.proto\x12\x03PGo\x1a\x0b\x65nums.proto\"a\n\x11MapObjectsRequest\x12\x1f\n\x0c\x63\x65ll_request\x18\x01 \x01(\x0b\x32\t.PGo.Cell\x12\x10\n\x08unknown2\x18\x02 \x01(\x0c\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\"+\n\x04\x43\x65ll\x12\x11\n\x05typea\x18\x80\x80\x80\xc0\x01 \x03(\x04\x12\x10\n\x05typeb\x18\x80\x80\x80@ \x03(\x04\".\n\x12MapObjectsResponse\x12\x18\n\x05tiles\x18\x01 \x03(\x0b\x32\t.PGo.Tile\"\x8e\x02\n\x04Tile\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x19\n\x11\x63urrent_timestamp\x18\x02 \x01(\x04\x12\x18\n\x05\x66orts\x18\x03 \x03(\x0b\x32\t.PGo.Fort\x12+\n\x0bspawn_start\x18\x05 \x03(\x0b\x32\x16.PGo.PokemonSpawnStart\x12\'\n\tspawn_end\x18\n \x03(\x0b\x32\x14.PGo.PokemonSpawnEnd\x12+\n\x0fpokemon_in_area\x18\x0b \x03(\x0b\x32\x12.PGo.PokemonInArea\x12 \n\tlocation9\x18\t \x03(\x0b\x32\r.PGo.Location\x12 \n\tlocation4\x18\x04 \x03(\x0b\x32\r.PGo.Location\"\xa7\x02\n\x04\x46ort\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x10\n\x08latitude\x18\x03 \x01(\x01\x12\x11\n\tlongitude\x18\x04 \x01(\x01\x12\x11\n\tnot_sure8\x18\x08 \x01(\x08\x12\x1c\n\x04team\x18\x05 \x01(\x0e\x32\x0e.PGo.TeamColor\x12\x18\n\x10guard_pokemon_id\x18\x06 \x01(\x04\x12\x10\n\x08prestige\x18\n \x01(\x04\x12\x14\n\x0cis_in_battle\x18\x0b \x01(\x08\x12\x13\n\x0bis_pokestop\x18\t \x01(\x08\x12\x10\n\x08reset_ts\x18\x0e \x01(\x04\x12\x16\n\x0e\x61\x63tive_lure_id\x18\x0c \x01(\x0c\x12)\n\x0e\x66ort_lure_info\x18\r \x01(\x0b\x32\x11.PGo.FortLureInfo\"h\n\x0c\x46ortLureInfo\x12\x0f\n\x07\x66ort_id\x18\x01 \x01(\t\x12\x11\n\tnot_sure2\x18\x02 \x01(\x01\x12!\n\x07pokemon\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x11\n\texpiry_ts\x18\x04 \x01(\x04\"\xf0\x01\n\x11PokemonSpawnStart\x12\x0b\n\x03uid\x18\x01 \x01(\x01\x12\x13\n\x0b\x61ppeared_ts\x18\x02 \x01(\x04\x12\x10\n\x08latitude\x18\x03 \x01(\x01\x12\x11\n\tlongitude\x18\x04 \x01(\x01\x12\x14\n\x0cs2cell_token\x18\x05 \x01(\t\x12\x38\n\x0cpokemon_info\x18\x07 \x01(\x0b\x32\".PGo.PokemonSpawnStart.PokemonInfo\x12\x12\n\nnot_sure11\x18\x0b \x01(\x05\x1a\x30\n\x0bPokemonInfo\x12!\n\x07pokemon\x18\x02 \x01(\x0e\x32\x10.PGo.PokemonName\"\x8f\x01\n\x0fPokemonSpawnEnd\x12\x14\n\x0cs2cell_token\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\x01\x12!\n\x07pokemon\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x11\n\texpiry_ts\x18\x04 \x01(\x04\x12\x10\n\x08latitude\x18\x05 \x01(\x01\x12\x11\n\tlongitude\x18\x06 \x01(\x01\"Q\n\rPokemonInArea\x12!\n\x07pokemon\x18\x01 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x10\n\x08\x64istance\x18\x02 \x01(\x02\x12\x0b\n\x03uid\x18\x03 \x01(\x01\"/\n\x08Location\x12\x10\n\x08latitude\x18\x02 \x01(\x01\x12\x11\n\tlongitude\x18\x03 \x01(\x01P\x00\x62\x06proto3')
+  serialized_pb=_b('\n\tmap.proto\x12\x03PGo\x1a\x15holoholo_shared.proto\"a\n\x11MapObjectsRequest\x12\x1f\n\x0c\x63\x65ll_request\x18\x01 \x01(\x0b\x32\t.PGo.Cell\x12\x10\n\x08unknown2\x18\x02 \x01(\x0c\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\"+\n\x04\x43\x65ll\x12\x11\n\x05typea\x18\x80\x80\x80\xc0\x01 \x03(\x04\x12\x10\n\x05typeb\x18\x80\x80\x80@ \x03(\x04\".\n\x12MapObjectsResponse\x12\x18\n\x05tiles\x18\x01 \x03(\x0b\x32\t.PGo.Tile\"\x8e\x02\n\x04Tile\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x19\n\x11\x63urrent_timestamp\x18\x02 \x01(\x04\x12\x18\n\x05\x66orts\x18\x03 \x03(\x0b\x32\t.PGo.Fort\x12+\n\x0bspawn_start\x18\x05 \x03(\x0b\x32\x16.PGo.PokemonSpawnStart\x12\'\n\tspawn_end\x18\n \x03(\x0b\x32\x14.PGo.PokemonSpawnEnd\x12+\n\x0fpokemon_in_area\x18\x0b \x03(\x0b\x32\x12.PGo.PokemonInArea\x12 \n\tlocation9\x18\t \x03(\x0b\x32\r.PGo.Location\x12 \n\tlocation4\x18\x04 \x03(\x0b\x32\r.PGo.Location\"\xa7\x02\n\x04\x46ort\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x10\n\x08latitude\x18\x03 \x01(\x01\x12\x11\n\tlongitude\x18\x04 \x01(\x01\x12\x11\n\tnot_sure8\x18\x08 \x01(\x08\x12\x1c\n\x04team\x18\x05 \x01(\x0e\x32\x0e.PGo.TeamColor\x12\x18\n\x10guard_pokemon_id\x18\x06 \x01(\x04\x12\x10\n\x08prestige\x18\n \x01(\x04\x12\x14\n\x0cis_in_battle\x18\x0b \x01(\x08\x12\x13\n\x0bis_pokestop\x18\t \x01(\x08\x12\x10\n\x08reset_ts\x18\x0e \x01(\x04\x12\x16\n\x0e\x61\x63tive_lure_id\x18\x0c \x01(\x0c\x12)\n\x0e\x66ort_lure_info\x18\r \x01(\x0b\x32\x11.PGo.FortLureInfo\"h\n\x0c\x46ortLureInfo\x12\x0f\n\x07\x66ort_id\x18\x01 \x01(\t\x12\x11\n\tnot_sure2\x18\x02 \x01(\x01\x12!\n\x07pokemon\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x11\n\texpiry_ts\x18\x04 \x01(\x04\"\xf0\x01\n\x11PokemonSpawnStart\x12\x0b\n\x03uid\x18\x01 \x01(\x01\x12\x13\n\x0b\x61ppeared_ts\x18\x02 \x01(\x04\x12\x10\n\x08latitude\x18\x03 \x01(\x01\x12\x11\n\tlongitude\x18\x04 \x01(\x01\x12\x14\n\x0cs2cell_token\x18\x05 \x01(\t\x12\x38\n\x0cpokemon_info\x18\x07 \x01(\x0b\x32\".PGo.PokemonSpawnStart.PokemonInfo\x12\x12\n\nnot_sure11\x18\x0b \x01(\x05\x1a\x30\n\x0bPokemonInfo\x12!\n\x07pokemon\x18\x02 \x01(\x0e\x32\x10.PGo.PokemonName\"\x8f\x01\n\x0fPokemonSpawnEnd\x12\x14\n\x0cs2cell_token\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\x01\x12!\n\x07pokemon\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x11\n\texpiry_ts\x18\x04 \x01(\x04\x12\x10\n\x08latitude\x18\x05 \x01(\x01\x12\x11\n\tlongitude\x18\x06 \x01(\x01\"Q\n\rPokemonInArea\x12!\n\x07pokemon\x18\x01 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x10\n\x08\x64istance\x18\x02 \x01(\x02\x12\x0b\n\x03uid\x18\x03 \x01(\x01\"/\n\x08Location\x12\x10\n\x08latitude\x18\x02 \x01(\x01\x12\x11\n\tlongitude\x18\x03 \x01(\x01P\x00\x62\x06proto3')
   ,
-  dependencies=[enums__pb2.DESCRIPTOR,])
+  dependencies=[holoholo__shared__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -76,8 +76,8 @@ _MAPOBJECTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31,
-  serialized_end=128,
+  serialized_start=41,
+  serialized_end=138,
 )
 
 
@@ -114,8 +114,8 @@ _CELL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=130,
-  serialized_end=173,
+  serialized_start=140,
+  serialized_end=183,
 )
 
 
@@ -145,8 +145,8 @@ _MAPOBJECTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=221,
+  serialized_start=185,
+  serialized_end=231,
 )
 
 
@@ -225,8 +225,8 @@ _TILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=224,
-  serialized_end=494,
+  serialized_start=234,
+  serialized_end=504,
 )
 
 
@@ -340,8 +340,8 @@ _FORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=497,
-  serialized_end=792,
+  serialized_start=507,
+  serialized_end=802,
 )
 
 
@@ -392,8 +392,8 @@ _FORTLUREINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=794,
-  serialized_end=898,
+  serialized_start=804,
+  serialized_end=908,
 )
 
 
@@ -423,8 +423,8 @@ _POKEMONSPAWNSTART_POKEMONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1093,
-  serialized_end=1141,
+  serialized_start=1103,
+  serialized_end=1151,
 )
 
 _POKEMONSPAWNSTART = _descriptor.Descriptor(
@@ -495,8 +495,8 @@ _POKEMONSPAWNSTART = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=901,
-  serialized_end=1141,
+  serialized_start=911,
+  serialized_end=1151,
 )
 
 
@@ -561,8 +561,8 @@ _POKEMONSPAWNEND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1144,
-  serialized_end=1287,
+  serialized_start=1154,
+  serialized_end=1297,
 )
 
 
@@ -606,8 +606,8 @@ _POKEMONINAREA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1289,
-  serialized_end=1370,
+  serialized_start=1299,
+  serialized_end=1380,
 )
 
 
@@ -644,8 +644,8 @@ _LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1372,
-  serialized_end=1419,
+  serialized_start=1382,
+  serialized_end=1429,
 )
 
 _MAPOBJECTSREQUEST.fields_by_name['cell_request'].message_type = _CELL
@@ -656,14 +656,14 @@ _TILE.fields_by_name['spawn_end'].message_type = _POKEMONSPAWNEND
 _TILE.fields_by_name['pokemon_in_area'].message_type = _POKEMONINAREA
 _TILE.fields_by_name['location9'].message_type = _LOCATION
 _TILE.fields_by_name['location4'].message_type = _LOCATION
-_FORT.fields_by_name['team'].enum_type = enums__pb2._TEAMCOLOR
+_FORT.fields_by_name['team'].enum_type = holoholo__shared__pb2._TEAMCOLOR
 _FORT.fields_by_name['fort_lure_info'].message_type = _FORTLUREINFO
-_FORTLUREINFO.fields_by_name['pokemon'].enum_type = enums__pb2._POKEMONNAME
-_POKEMONSPAWNSTART_POKEMONINFO.fields_by_name['pokemon'].enum_type = enums__pb2._POKEMONNAME
+_FORTLUREINFO.fields_by_name['pokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
+_POKEMONSPAWNSTART_POKEMONINFO.fields_by_name['pokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
 _POKEMONSPAWNSTART_POKEMONINFO.containing_type = _POKEMONSPAWNSTART
 _POKEMONSPAWNSTART.fields_by_name['pokemon_info'].message_type = _POKEMONSPAWNSTART_POKEMONINFO
-_POKEMONSPAWNEND.fields_by_name['pokemon'].enum_type = enums__pb2._POKEMONNAME
-_POKEMONINAREA.fields_by_name['pokemon'].enum_type = enums__pb2._POKEMONNAME
+_POKEMONSPAWNEND.fields_by_name['pokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
+_POKEMONINAREA.fields_by_name['pokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
 DESCRIPTOR.message_types_by_name['MapObjectsRequest'] = _MAPOBJECTSREQUEST
 DESCRIPTOR.message_types_by_name['Cell'] = _CELL
 DESCRIPTOR.message_types_by_name['MapObjectsResponse'] = _MAPOBJECTSRESPONSE

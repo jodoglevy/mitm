@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package PGo;
 
-import public "enums.proto";
+import public "holoholo_shared.proto";
 
 message MapObjectsRequest {
   Cell cell_request = 1;
