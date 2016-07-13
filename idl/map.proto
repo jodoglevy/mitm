@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package PGo;
 
+import public "enums.proto";
+
 message MapObjectsRequest {
   Cell cell_request = 1;
   bytes unknown2 = 2;
@@ -27,21 +29,16 @@ message Tile {
 
   uint64 current_timestamp = 2;
   repeated Fort forts = 3;
-  repeated Location location4 = 4; // TODO: not sure what this represents
 
-  // The closest pokemon, if it is within 2 "steps" or closer. This pokemon will NOT also be in pokemon_in_area
+  // Pokemon within 2 "steps" or closer will have a PokemonSpawnA and PokemonSpawnB
   repeated PokemonSpawnA close_pokemon_a = 5;
-  repeated Location location9 = 9; // TODO: not sure what this represents
   repeated PokemonSpawnB close_pokemon_b = 10;
-  repeated Pokemon pokemon_in_area = 11;
-}
 
-// This could probably be moved to shared .proto
-enum Team {
-  UNDEFINED = 0;
-  BLUE = 1;
-  RED = 2;
-  YELLOW = 3;
+  // Pokemon farther away than 2 "steps", but still in the area (3 "steps" away)
+  repeated PokemonInArea pokemon_in_area = 11;
+
+  repeated Location location9 = 9; // TODO: not sure what this represents
+  repeated Location location4 = 4; // TODO: not sure what this represents
 }
 
 // A "fort" is the internal name for a gym or pokestop point of interest
@@ -51,26 +48,27 @@ message Fort {
   double latitude = 3;
   double longitude = 4;
 
-  // applies only to a gym fort
-  Team team = 5; // the team that owns the gym currently
-  uint64 guard_pokemon_id = 6; // the pokedex number of the highest cp pokemon in the gym
   bool not_sure8 = 8;
-  bool is_pokestop = 9; // applies only to a pokestop fort
+
+  // applies only to a gym fort
+  TeamColor team = 5; // color of the team that owns the gym currently
+  uint64 guard_pokemon_id = 6; // the pokedex number of the highest cp pokemon in the gym
   uint64 prestige = 10; // gym's experience / prestige
   bool is_in_battle = 11; // whether the gym is currently being battled
 
-  // applies only to a pokestop fort with a lure attached
-  bytes active_module_id = 12; // TODO: needs validation
-  FortLureInfo fort_lure_info = 13;
-
   // applies only to a pokestop fort
+  bool is_pokestop = 9;
   uint64 reset_ts = 14; // the time at which the pokestop can be activated again
+
+  // applies only to a pokestop fort with a lure attached
+  bytes active_lure_id = 12; // TODO: needs validation
+  FortLureInfo fort_lure_info = 13;
 }
 
 message FortLureInfo {
   string fort_id = 1;
   double not_sure2 = 2; // TODO: not sure what this is
-  uint64 pokedex_number = 3; // TODO: needs validation, seems to be the pokedex number of the pokemon at the lure
+  PokemonName pokemon = 3; // TODO: needs validation, seems to be the pokemon at the lure
   uint64 expiry_ts = 4; // when the lure will end
 }
 
@@ -83,10 +81,10 @@ message PokemonSpawnA {
   // S2 geographic area that this pokemon is in (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
   string s2cell_token = 5;
 
-  message PokedexNumber {
-    uint64 pokedex_number = 2;
+  message PokemonInfo {
+    PokemonName pokemon = 2;
   }
-  PokedexNumber pokedex_number = 7;
+  PokemonInfo pokemon_info = 7;
 
   int32 not_sure11 = 11; // TODO: not sure what this is
 }
@@ -97,16 +95,16 @@ message PokemonSpawnB {
     string s2cell_token = 1;
 
     double uid = 2;
-    uint64 pokedex_number = 3;
+    PokemonName pokemon = 3;
     uint64 expiry_ts = 4; // when the pokemon will disappear
     double latitude = 5;
     double longitude = 6;
 }
 
-message Pokemon {
-  uint64 pokedex_number = 1;
+message PokemonInArea {
+  PokemonName pokemon = 1;
   float distance = 2; // TODO: needs validation, seems to be distance in meters
-  double id = 3;
+  double uid = 3;
 }
 
 message Location {
