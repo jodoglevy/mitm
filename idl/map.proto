@@ -25,14 +25,14 @@ message MapObjectsResponse {
 message Tile {
   
   // S2 geographic area that the tile covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
-  uint64 s2cell_token = 1;
+  uint64 id = 1;
 
   uint64 current_timestamp = 2;
   repeated Fort forts = 3;
 
   // Pokemon within 2 "steps" or closer will have a PokemonSpawnA and PokemonSpawnB
-  repeated PokemonSpawnA close_pokemon_a = 5;
-  repeated PokemonSpawnB close_pokemon_b = 10;
+  repeated PokemonSpawnStart spawn_start = 5;
+  repeated PokemonSpawnEnd spawn_end = 10;
 
   // Pokemon farther away than 2 "steps", but still in the area (3 "steps" away)
   repeated PokemonInArea pokemon_in_area = 11;
@@ -72,7 +72,7 @@ message FortLureInfo {
   uint64 expiry_ts = 4; // when the lure will end
 }
 
-message PokemonSpawnA {
+message PokemonSpawnStart {
   double uid = 1;
   uint64 appeared_ts = 2; // TODO: needs validation, seems to be when the pokemon first appeared
   double latitude = 3;
@@ -89,7 +89,7 @@ message PokemonSpawnA {
   int32 not_sure11 = 11; // TODO: not sure what this is
 }
 
-message PokemonSpawnB {
+message PokemonSpawnEnd {
     
     // S2 geographic area that this pokemon is in (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
     string s2cell_token = 1;
